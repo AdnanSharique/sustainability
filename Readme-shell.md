@@ -365,7 +365,7 @@ To give permissions for the Power BI reports to access the data sources:
 
 11. **Expand** Data source credentials.
 
-12. **Click** Edit credentials in front of DocumentDB and a dialogue box will pop up.
+12. **Click** Edit credentials in front of DocumentDB and a dialogue box will pop up to enter the Account Key. To get the account key, let's navigate to Azure Portal.
 
 	![Data Source Creds.](media/power-bi-report-06.png)
 
@@ -377,11 +377,11 @@ To give permissions for the Power BI reports to access the data sources:
 
 	![Data Source Creds.](media/power-bi-report-08.png)
 	
-15. Keeping the "Authentication method" as "Key", **paste** the "Account key" from step #16 and **click** on Sign in.
+15. Keeping the "Authentication method" as "Key", **paste** the key copied in step #14 in to the "Account key" and **click** on Sign in.
 
 	![Validate Creds.](media/power-bi-report-09.png)
 		
-### Steps to create realtime reports
+### Steps to create real-time reports
 
 1.	**Click** on the three dots in front of the “Realtime Air Quality API” dataset and **click** on Create report, a new report will be created.
 
