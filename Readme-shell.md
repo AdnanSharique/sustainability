@@ -6,7 +6,8 @@ DREAM Demos in a Box (DDiB) are packaged Industry Scenario DREAM Demos with ARM 
  ## Objective & Intent
 Partners can deploy DREAM Demos in their own Azure subscriptions and show live demos to customers. 
 In partnership with Microsoft sellers, partners can deploy the Industry scenario DREAM demos into customer subscriptions. 
-Customers can play,  get hands-on experience navigating through the demo environment in their own subscription and show to their own stakeholders
+Customers can play,  get hands-on experience navigating through the demo environment in their own subscription and show to their own stakeholders.
+
 **Before You Begin**
 
 ## :exclamation:IMPORTANT NOTES:  
@@ -63,9 +64,9 @@ THIS DEMO/LAB PROVIDES CERTAIN SOFTWARE TECHNOLOGY/PRODUCT FEATURES AND FUNCTION
    - Microsoft.EventHub 
    - Microsoft.Media.MediaServices
 * You can run only one deployment at any point in time and need to wait for its completion. You should not run multiple deployments in parallel as that will cause deployment failures.
-* Select a region where the desired Azure Services are available. If certain services are not available, deployment may fail. See [Azure Services Global Availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=all) for understanding target service availability. (consider the region availability for Synapse workspace, Iot Central and cognitive services while choosing a location)
+* Select a region where the desired Azure Services are available. If certain services are not available, deployment may fail. See [Azure Services Global Availability](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=all) for understanding target service availability. (consider the region availability for Synapse workspace, Iot Central and cognitive services while choosing a location.)
 * Do not use any special characters or uppercase letters in the environment code. Also, do not re-use your environment code.
-* In this Accelerator we have converted Real-time reports into static reports for the ease of users but have covered entire process to configure Realtime dataset. Using those Realtime dataset you can create Realtime reports.
+* In this Accelerator we have converted real-time reports into static reports for the ease of users but have covered entire process to configure real-time dataset. Using those real-time dataset you can create real-time reports.
 * Please ensure that you select the correct resource group name. We have given a sample name which may need to be changed should any resource group with the same name already exist in your subscription.
 * The audience for this document is CSAs and GBBs.
 * Please log in to Azure and Power BI using the same credentials.
@@ -90,13 +91,13 @@ THIS DEMO/LAB PROVIDES CERTAIN SOFTWARE TECHNOLOGY/PRODUCT FEATURES AND FUNCTION
 
 	![A portion of the Azure Portal home screen is displayed with Create Resource Group tile](media/resource-group-2.png)
 	
-5. On the 'Create a resource group' screen, **select** your desired Subscription. For Resource group, **type** 'DDiB-Sustainability-Lab'. 
+5. On the 'Create a resource group' screen, **select** your desired subscription. For Resource group, **type** 'DDiB-Sustainability-Lab'. 
 
 6. **Select** your desired region.
 
 	> **Note:** Some services behave differently in different regions and may break some part of the setup. Choosing one of the following regions is preferable: 		westus2, eastus2, northcentralus, northeurope, southeastasia, australliaeast, centralindia, uksouth, japaneast.
 
-7. **Click** the 'Review + Create' button.
+7. **Click** the 'Review + create' button.
 
 	![The Create a resource group form is displayed populated with Synapse-MCW as the resource group name.](media/resource-group-3.png)
 
@@ -108,7 +109,7 @@ THIS DEMO/LAB PROVIDES CERTAIN SOFTWARE TECHNOLOGY/PRODUCT FEATURES AND FUNCTION
 
 1. **Open** Power BI in a new tab using the following link:  [https://app.powerbi.com/](https://app.powerbi.com/)
 
-2. **Sign in**, to Power BI using your Power BI Pro account.
+2. **Sign in** to Power BI using your Power BI Pro account.
 
 	![Sign in to Power BI.](media/power-bi.png)
 
@@ -138,7 +139,7 @@ THIS DEMO/LAB PROVIDES CERTAIN SOFTWARE TECHNOLOGY/PRODUCT FEATURES AND FUNCTION
 
 9. **Select API** from the list of options and **click** next. 
 
-10. **Enable** the ‘Historic data analysis’ 
+10. **Enable** ‘Historic data analysis’.
 
 	![Select API then next.](media/power-bi-5.png)
 
@@ -233,15 +234,19 @@ THIS DEMO/LAB PROVIDES CERTAIN SOFTWARE TECHNOLOGY/PRODUCT FEATURES AND FUNCTION
 
 	> **Note:** If you are creating a new storage account, give it a unique name with no special characters or uppercase letters.
 
-4. In the Azure Cloud Shell window, ensure the PowerShell environment is selected and **enter** the following command to clone the repository files.
-Command:
+4. In the Azure Cloud Shell window, ensure that the PowerShell environment is selected and **enter** the following command to clone the repository files.
+
+command:
 ```
-ggit clone -b sustainability https://daidemos@dev.azure.com/daidemos/Microsoft%20Data%20and%20AI%20DREAM%20Demos%20and%20DDiB/_git/DreamDemoInABox sustainability
+git clone -b sustainability https://daidemos@dev.azure.com/daidemos/Microsoft%20Data%20and%20AI%20DREAM%20Demos%20and%20DDiB/_git/DreamDemoInABox sustainability
 ```
 
 ![Git Clone Command to Pull Down the demo Repository.](media/cloud-shell-4.png)
 	
-> **Note:** If you get File already exist error, please execute following command: rm sustainability -r -f to delete existing clone.
+> **Note:** If you get File already exist error, please execute the following command to delete existing clone: 
+```
+rm sustainability -r -f 
+```
 
 > **Note**: When executing scripts, it is important to let them run to completion. Some tasks may take longer than others to run. When a script completes execution, you will be returned to a command prompt. 
 
@@ -295,7 +300,7 @@ cd ./sustainability/
 	> **Notes:**
 	> - The user with single subscription won't be prompted to select subscription.
 	> - The subscription highlighted in yellow will be selected by default if you do not enter any disired subscription. Please select the subscription carefully, as it may break the execution further.
-	> - While you are waiting for processes to get completed in the Azure Cloud Shell window, you'll be asked to enter the code three times. This is necessary for performing installation of various Azure Services and preloading content in the Azure Synapse Analytics SQL Pool tables.
+	> - While you are waiting for the processes to get completed in the Azure Cloud Shell window, you'll be asked to enter the code three times. This is necessary for performing installation of various Azure Services and preloading content in the Azure Synapse Analytics SQL Pool tables.
 
 16. You will be asked to confirm for the subscription, **enter** 'Y' and **press** the enter key.
 
@@ -328,7 +333,7 @@ The image on the below shows the Reports tab in Power BI.  We can create a Power
 
 ![Reports Tab.](media/power-bi-report-4.png)
 	
-> **Note:** If you do not see this list in your workspace after script execution, it may indicate that something went wrong during execution. You may use the subscript to patch it or manually upload the reports from this location and changing their parameters appropriately before authentication.
+> **Note:** If you do not see this list in your workspace after the script execution, it may indicate that something went wrong during execution. You may use the subscript to patch it up or manually upload the reports from this location and change their parameters appropriately before authentication.
 
 To give permissions for the Power BI reports to access the data sources:
 
@@ -346,7 +351,7 @@ To give permissions for the Power BI reports to access the data sources:
 
 	![Data Source Creds.](media/power-bi-report-7.png)
 
-> **Note:** Verify the server name has been updated to your current sql pool name for all the datasets. If not, update the same under parameters section and click apply.
+> **Note:** Verify that the server name has been updated to your current sql pool name for all the datasets. If not, update the same under parameters section and click apply.
 
 7. **Enter** Username as ‘labsqladmin’.
 
@@ -356,7 +361,7 @@ To give permissions for the Power BI reports to access the data sources:
 
 	![Validate Creds.](media/power-bi-report-8.png)
 	
-10. **Click** on the Demand and Bus Frequency.
+10. **Click** on Demand and Bus Frequency.
 
 11. **Expand** Data source credentials.
 
@@ -394,7 +399,7 @@ To give permissions for the Power BI reports to access the data sources:
 
 4. **Drag /Select** the column name into the fields which is below the visualization panel.
 	
-5. Select Page Level Filter in Filter pane.
+5. **Select** Page Level Filter in Filter pane.
 
 	![Validate Creds.](media/power-bi-report-016.png)
 	
@@ -402,11 +407,11 @@ To give permissions for the Power BI reports to access the data sources:
 
 	![Validate Creds.](media/power-bi-report-062.png)
 
-7. Select filter Type as “Relative Time”. In “Show items when the value” options, select “Is in the last”, “1” & “minute”. 
+7. **Select** filter Type as “Relative Time”. In “Show items when the value” options, select “Is in the last”, “1” & “minute”. 
 
 	![Validate Creds.](media/power-bi-report-017.png)
 	
-9. Select Apply Filter.
+9. **Select** Apply Filter.
 
 	![Validate Creds.](media/power-bi-report-018.png)
 
@@ -609,13 +614,13 @@ To give permissions for the Power BI reports to access the data sources:
 	
 	![Hover and Click.](media/power-bi-report-22.png)
 
-28. Similarly pin rest of the images from different tabs of the ‘Master Images’ report.
+28. Similarly pin the rest of the images from different tabs of the ‘Master Images’ report.
 	
 29. **Go back** to the ‘Fleet Manager EMS/Police/Fire (After)’ dashboard.
 
 	![Go back to Dashboard.](media/power-bi-report-24.png)
 	
-To hide title and subtitle for all the **images** that you have pined above. Please do the following:
+To hide title and subtitle for all the **images** that you have pined above, please do the following:
 
 30. Hover on the chiclet and **Click** on ellipsis ‘More Options’ of the image you selected.
 
@@ -645,7 +650,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 	
 	![Final Look.](media/power-bi-report-38.png)
 
-39. **Refer** to this table while pinning rest of the tiles to the dashboard.
+39. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-6.png)
 
@@ -657,7 +662,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-32.png)
 	
-42. **Refer** to this table while pinning rest of the tiles to the dashboard.
+42. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-1.png)
 
@@ -665,7 +670,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-34.png)
 	
-44. **Refer** to this table while pinning rest of the tiles to the dashboard.	
+44. **Refer** to this table while pinning the rest of the tiles to the dashboard.	
 
 	![Table.](media/power-bi-table-2.png) 
 
@@ -673,7 +678,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 	
 	![Final Look.](media/power-bi-report-35.png)
 	
-46. **Refer** to this table while pinning rest of the tiles to the dashboard.	
+46. **Refer** to this table while pinning the rest of the tiles to the dashboard.	
 
 	![Table.](media/power-bi-table-3.png)
 
@@ -681,7 +686,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-36.png)
 	
-48. **Refer** to this table while pinning rest of the tiles to the dashboard.
+48. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-4.png)
 	
@@ -689,7 +694,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-37.png)
 	
-50. **Refer** to this table while pinning rest of the tiles to the dashboard.
+50. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-5.png)
 	
@@ -697,7 +702,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-39.png)
 	
-52. **Refer** to this table while pinning rest of the tiles to the dashboard.
+52. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-7.png)
 	
@@ -705,7 +710,7 @@ To hide title and subtitle for all the **images** that you have pined above. Ple
 
 	![Final Look.](media/power-bi-report-40.png)
 
-54. **Refer** to this table while pinning rest of the tiles to the dashboard.
+54. **Refer** to this table while pinning the rest of the tiles to the dashboard.
 
 	![Table.](media/power-bi-table-8.png)
 	
@@ -724,7 +729,7 @@ By default, the web app will be provisioned with Gif placeholders for web app sc
 	
 	![Copy the dashboard id.](media/updating-powerbi-2.png)
 
-4. **Navigate** to azure portal.
+4. **Navigate** to Azure portal.
 
 5. **Open** the Azure Cloud Shell by selecting its icon from the top toolbar.
 
@@ -818,9 +823,9 @@ By default, the web app will be provisioned with Gif placeholders for web app sc
 
 > **Note:** You may be prompted to select your subscription if you have multiple subscriptions.
 	
-> **Note:** The setup for your Dream Demo in a Box is done here and now you can follow the demo script for testing/demoing your environment.
+> **Note:** The setup for your Dream Demo in a Box is done here and now you can follow the demo script for testing/demonstrating your environment.
 
-### Task 6: Pause or Resume script
+### Task 6: Pause or resume script
 
 > **Note:** Please perform these steps after your demo is done and you do not need the environment anymore. Also ensure you Resume the environment before demo if you paused it once. 
  
@@ -831,7 +836,7 @@ By default, the web app will be provisioned with Gif placeholders for web app sc
 	![Open and Click on Azure Cloud Shell.](media/cloud-shell.png.png)
 
 **Execute** the Pause_Resume_script.ps1 script by executing the following command: 
-1. **Run** Command: 
+1. **Run** command: 
 	```
 	cd "./sustainability"
 	```
